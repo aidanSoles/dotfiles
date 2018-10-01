@@ -1,0 +1,19 @@
+# My .bashrc with no plugins/themes (for cloning onto servers)
+
+# Bible verses
+alias matthew6:33-34='echo "But seek first the kingdom of God and his righteousness, and all these things will be added to you. Therefore do not be anxious about tomorrow, for tomorrow will be anxious for itself. Sufficient for the day is its own trouble."'
+alias john14:27='echo "Peace I leave with you; my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid."' # Thanks Mom :)
+alias 1peter2:9='echo "But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light."'
+alias revelation12:11='echo "And they have conquered him by the blood of the Lamb and by the word of their testimony, for they loved not their lives even unto death."'
+
+# Vim errywhere
+set -o vi
+
+# Ignore commands that start with a space (for rm commands mainly)
+setopt HIST_IGNORE_SPACE
+
+# My aliases
+alias rm=' rm' # Add space so it isn't added to history
+alias rmi=' rm -i' # Add space so it isn't added to history
+alias h='history | grep '
+alias svim='vim -S '
