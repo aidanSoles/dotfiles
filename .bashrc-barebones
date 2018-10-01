@@ -9,8 +9,12 @@ alias revelation12:11='echo "And they have conquered him by the blood of the Lam
 # Vim errywhere
 set -o vi
 
-# Ignore commands that start with a space (for rm commands mainly)
-setopt HIST_IGNORE_SPACE
+# Ignore commands that start with a space (for rm commands mainly) and duplicates
+HISTCONTROL=ignoreboth
+
+# Keep all the commands
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # My aliases
 alias rm=' rm' # Add space so it isn't added to history
