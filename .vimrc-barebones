@@ -7,6 +7,9 @@ set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
 set autoindent
+set nocindent
+set nosmartindent
+set indentexpr=
 " }}}
 
 " UI Configuration {{{
