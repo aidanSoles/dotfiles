@@ -97,6 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# vim errywhere
+set -o vi
+
 # My aliases
 alias rm=' rm' # Add space so it isn't added to history.
 alias rmi=' rm -i' # Add space so it isn't added to history.

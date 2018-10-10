@@ -15,7 +15,6 @@ set indentexpr=
 " UI Configuration {{{
 set number
 set showcmd
-" set cursorline " TODO colors
 filetype indent on
 set wildmenu
 set lazyredraw
@@ -31,18 +30,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 
+set noeb vb t_vb=
+
 " Below found at https://www.reddit.com/r/vim/comments/1mzefb/what_does_your_statusline_look_like/
 set fillchars=stl:―,stlnc:—,vert:│,fold:۰,diff:·
 
-highlight folded       cterm=bold ctermbg=none ctermfg=5 " TODO: colors
-highlight vertsplit    cterm=none ctermbg=none ctermfg=9
-highlight statusline   cterm=none ctermbg=none ctermfg=9
+highlight folded cterm=bold ctermbg=none ctermfg=5 " TODO: colors
+highlight vertsplit cterm=none ctermbg=none ctermfg=9
+highlight statusline cterm=none ctermbg=none ctermfg=9
 highlight statuslinenc cterm=none ctermbg=none ctermfg=9
-highlight specialkey   cterm=none ctermbg=none ctermfg=1
-highlight matchparen   cterm=none ctermbg=none ctermfg=5
-highlight wildmenu     cterm=bold ctermbg=none ctermfg=3
-highlight visual       cterm=bold ctermbg=7    ctermfg=none
-highlight user1        cterm=none ctermbg=none ctermfg=3
 " }}}
 
 " Searching {{{
