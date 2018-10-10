@@ -23,6 +23,7 @@ set showmatch
 set ruler
 set splitbelow
 set splitright
+colorscheme grape
 
 " autocmd vimenter * NERDTree # To enable NERDTree upon vim startup
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
