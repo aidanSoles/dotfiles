@@ -2,25 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/aiden/.oh-my-zsh
+export ZSH="/Users/aidan/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cobalt2"
+ZSH_THEME="miloshadzic"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -48,13 +48,17 @@ ZSH_THEME="cobalt2"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -93,52 +97,27 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Ignore commands that start with a space (for rm commands mainly)
-setopt HIST_IGNORE_SPACE
-
 # My aliases
-# TODO: Need to set the path instead of hardcoding them
 alias rm=' rm' # Add space so it isn't added to history.
 alias rmi=' rm -i' # Add space so it isn't added to history.
-alias upgrayedd='~/prog-files/terminal/upgrayedd.sh'
-alias cask-upgrade='~/prog-files/terminal/cask-upgrade'
 alias h='history | grep '
 alias svim='vim -S '
-alias new-todo='~/prog-files/terminal/new-todo'
-
-# My source files
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# For node.js
-# export PATH="/usr/local/opt/icu4c/bin:$PATH" # Results in duplicates.
-[[ ":$PATH:" =~ ":/usr/local/opt/icu4c/bin:" ]] || PATH="$PATH:/usr/local/opt/icu4c/bin"
-# export PATH="/usr/local/opt/icu4c/sbin:$PATH" # Results in duplicates.
-[[ ":$PATH:" =~ ":/usr/local/opt/icu4c/sbin:" ]] || PATH="$PATH:/usr/local/opt/icu4c/sbin"
-# For compilers to find this software you may need to set:
-#     LDFLAGS:  -L/usr/local/opt/icu4c/lib
-#     CPPFLAGS: -I/usr/local/opt/icu4c/include
-# For pkg-config to find this software you may need to set:
-#     PKG_CONFIG_PATH: /usr/local/opt/icu4c/lib/pkgconfig
-
-# For nvm
-export NVM_DIR="$HOME/.nvm" # [[ ":$PATH:" =~ ":/new-directory:" ]] || PATH="/new-directory:$PATH" # Results in duplicates.
-. "/usr/local/opt/nvm/nvm.sh"
-# You can set $NVM_DIR to any location, but leaving it unchanged from
-# /usr/local/opt/nvm will destroy any nvm-installed Node installations
-# upon upgrade/reinstall.
-# Type `nvm help` for further information.
+# alias new-todo='~/prog-files/terminal/new-todo' # TODO: Make work and remove hardcoding
 
 # For brew doctor
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || PATH="$PATH:/usr/local/sbin"
 
-# For z
-. /usr/local/etc/profile.d/z.sh
-
 # CLI vim commands
-set -o vi
-stty erase ^?
+# set -o vi # TODO: after autoprediction
+
+# For z
+. /usr/local/bin/z.sh
 
 # Bible verses
-alias matthew6:33-34='echo "But seek first the kingdom of God and his righteousness, and all these things will be added to you. Therefore do not be anxious about tomorrow, for tomorrow will be anxious for itself. Sufficient for the day is its own trouble."'
-alias 1peter2:9='echo "But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light."'
-alias revelation12:11='echo "And they have conquered him by the blood of the Lamb and by the word of their testimony, for they loved not their lives even unto death."'
+source .bible_verses
+
+# ZSH autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# ZSH syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
