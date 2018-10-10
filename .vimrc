@@ -1,38 +1,4 @@
-execute pathogen#infect() 
-
-" Colors {{{
-set background=dark
-colorscheme abstract_aidan
-set term=screen-256color
-syntax enable
-" highlight Cursorline ctermbg=Blue
-" highlight Normal ctermbg=NONE
-" highlight Search ctermbg=129 cterm=NONE
-" highlight StatusLine ctermbg=129 
-" highlight Todo ctermfg=Red
-" TODO
-" }}}
-
-" Colors I Like {{{
-" abstract
-" angr
-" atom
-" deep-space
-" dracula
-" gotham
-" nord
-" TODO: Try out the rest.
-" }}}
-
-" Plugins I Like {{{
-" nerdtree <- Installed
-" nerdtree-git-plugin <- Installed
-" syntastic <- Installed
-" undotree <- Installed
-" vim-airline <- Installed
-" vim-airline-themes <- Installed
-" vim-terraform <- Installed
-" }}}
+execute pathogen#infect()
 
 " Spaces And Tabs {{{
 set tabstop=4
@@ -41,12 +7,15 @@ set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
 set autoindent
+set nocindent
+set nosmartindent
+set indentexpr=
 " }}}
 
 " UI Configuration {{{
 set number
 set showcmd
-set cursorline
+" set cursorline " TODO colors
 filetype indent on
 set wildmenu
 set lazyredraw
@@ -54,32 +23,25 @@ set showmatch
 set ruler
 set splitbelow
 set splitright
-" set colorcolumn=80
-autocmd vimenter * NERDTree
+
+" autocmd vimenter * NERDTree # To enable NERDTree upon vim startup
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" autocmd bufenter *.tf* colorscheme abstract
+
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-" TODO: Add tmux statusline (https://github.com/edkolev/tmuxline.vim).
+
+" Below found at https://www.reddit.com/r/vim/comments/1mzefb/what_does_your_statusline_look_like/
+set fillchars=stl:―,stlnc:—,vert:│,fold:۰,diff:·
+
+highlight folded       cterm=bold ctermbg=none ctermfg=5 " TODO: colors
+highlight vertsplit    cterm=none ctermbg=none ctermfg=9
+highlight statusline   cterm=none ctermbg=none ctermfg=9
+highlight statuslinenc cterm=none ctermbg=none ctermfg=9
+highlight specialkey   cterm=none ctermbg=none ctermfg=1
+highlight matchparen   cterm=none ctermbg=none ctermfg=5
+highlight wildmenu     cterm=bold ctermbg=none ctermfg=3
+highlight visual       cterm=bold ctermbg=7    ctermfg=none
+highlight user1        cterm=none ctermbg=none ctermfg=3
 " }}}
 
 " Searching {{{
@@ -130,18 +92,16 @@ nnoremap <leader>d :res -5<<CR>
 nnoremap <leader>wq :wqall<CR>
 nnoremap <leader>wa :wall<CR>
 nnoremap <leader>qa :qall<CR>
-nnoremap <leader>sa <esc>ggVG 
+nnoremap <leader>sa <esc>ggVG
 nnoremap <leader>n :nohlsearch<CR>
-nnoremap <leader>z :UndotreeToggle<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>sd :SyntasticToggleMode<CR>
-nnoremap <leader>se :SyntasticCheck<CR>
-" nnoremap <leader>ip :call FindIPAddresses()
+nnoremap <leader>ip :call FindIPAddresses()<CR>
+nnoremap <leader>sw :call TrimWhitespace()<CR>
 " }}}
 
 " Custom Functions {{{
 function! FindIPAddresses()
-  :execute "normal! g/ub\<CR>"
+  normal /\(\d\+\.\)\{3\}\d\{1,3\}
 endfunction
 
 function! TabOrComplete()
@@ -152,8 +112,12 @@ function! TabOrComplete()
   endif
 endfunction
 inoremap <Tab> <C-R>=TabOrComplete()<CR>
-" TODO: Add StripTrailingWhitespaces function (https://dougblack.io/words/a-good-vimrc.html).
-" TODO: Add dictionary.
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
 " }}}
 
 " Copying {{{

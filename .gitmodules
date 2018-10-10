@@ -1,0 +1,12 @@
+[submodule "oh-my-zsh"]
+	path = .oh-my-zsh
+    url = https://github.com/aidanSoles/oh-my-zsh
+[submodule ".vim/bundle/colorschemes"]
+	path = .vim/bundle/colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/vim-terraform"]
+	path = .vim/bundle/vim-terraform
+    url = https://github.com/hashivim/vim-terraform.git
