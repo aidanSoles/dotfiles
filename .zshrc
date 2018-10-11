@@ -117,7 +117,7 @@ alias svim='vim -S '
 . /usr/local/bin/z.sh
 
 # Bible verses
-source .bible_verses
+source ~/.bible_verses
 
 # ZSH autosuggestions
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
