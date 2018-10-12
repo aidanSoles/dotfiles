@@ -23,8 +23,10 @@ set ruler
 set splitbelow
 set splitright
 colorscheme grape
+syntax on
+highlight search ctermfg=none ctermbg=194 cterm=none
+highlight visual ctermfg=none ctermbg=194 cterm=none
 
-" autocmd vimenter * NERDTree # To enable NERDTree upon vim startup
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:terraform_fmt_on_save=1
@@ -35,7 +37,7 @@ set noeb vb t_vb=
 " Below found at https://www.reddit.com/r/vim/comments/1mzefb/what_does_your_statusline_look_like/
 set fillchars=stl:―,stlnc:—,vert:│,fold:۰,diff:·
 
-highlight folded cterm=bold ctermbg=none ctermfg=5 " TODO: colors
+highlight folded cterm=bold ctermbg=none ctermfg=5
 highlight vertsplit cterm=none ctermbg=none ctermfg=9
 highlight statusline cterm=none ctermbg=none ctermfg=9
 highlight statuslinenc cterm=none ctermbg=none ctermfg=9
@@ -93,7 +95,8 @@ nnoremap <leader>sa <esc>ggVG
 nnoremap <leader>n :nohlsearch<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>ip :call FindIPAddresses()<CR>
-nnoremap <leader>sw :call TrimWhitespace()<CR>
+nnoremap <leader>tw :call TrimWhitespace()<CR>
+nnoremap <leader>tt :call TabToggle()<CR>
 " }}}
 
 " Custom Functions {{{
@@ -109,6 +112,18 @@ function! TabOrComplete()
   endif
 endfunction
 inoremap <Tab> <C-R>=TabOrComplete()<CR>
+
+function! TabToggle()
+  if &expandtab
+    set shiftwidth=4
+    set softtabstop=0
+    set noexpandtab
+  else
+    set shiftwidth=4
+    set softtabstop=4
+    set expandtab
+  endif
+endfunction
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
