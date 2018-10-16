@@ -1,5 +1,11 @@
 execute pathogen#infect()
 
+" TODO {{{
+" 1. Fix `vim-terraform` plugin.
+" 2. Fix visual line/block coloring. √
+" 3. Fix prompt. √
+" }}}
+
 " Spaces And Tabs {{{
 set tabstop=4
 set softtabstop=4
@@ -24,11 +30,12 @@ set splitbelow
 set splitright
 colorscheme grape
 syntax on
-highlight search ctermfg=none ctermbg=194 cterm=none
-highlight visual ctermfg=none ctermbg=194 cterm=none
+highlight search ctermfg=none ctermbg=LightMagenta cterm=none
+highlight visual ctermfg=none ctermbg=LightMagenta cterm=none
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+autocmd BufEnter *.tf* colorscheme grape
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 
