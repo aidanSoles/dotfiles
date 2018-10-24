@@ -10,9 +10,9 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/aidanSoles/oh-my-zsh.git
-[submodule ".tmux/plugins/tmp"]
-	path = .tmux/plugins/tmp
-	url = https://github.com/tmux-plugins/tpm.git
 [submodule ".tmux/plugins/tmux-resurrect"]
 	path = .tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
