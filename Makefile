@@ -15,7 +15,7 @@ osx-put:
 	; for file in "$${FILES[@]}"; do \
 		cp ./"$${file}" ~; \
 	done \
-	; declare -a DIRECTORIES=(".oh-my-zsh" ".vim" ".zsh" ) \
+	; declare -a DIRECTORIES=(".oh-my-zsh" ".tmux" ".vim" ".zsh" ) \
 	; for directory in "$${DIRECTORIES[@]}"; do \
 		cp -r ./"$${directory}" ~; \
 	done
