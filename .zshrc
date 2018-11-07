@@ -105,6 +105,7 @@ alias rm=' rm' # Add space so it isn't added to history.
 alias rmi=' rm -i' # Add space so it isn't added to history.
 alias h='history | grep '
 alias svim='vim -S '
+# alias tmux="TERM=screen-256color-bce tmux" # Fix vim issues
 # alias new-todo='~/prog-files/terminal/new-todo' # TODO: Make work and remove hardcoding
 
 # For brew doctor
@@ -124,3 +125,14 @@ source ~/.bible_verses
 
 # ZSH syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# For Pulumi
+[[ ":$PATH:" =~ ":$HOME/.pulumi/bin:" ]] || PATH="$PATH:$HOME/.pulumi/bin"
+
+# For NVM
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh" > /dev/null 2>&1 # python > javascript
+npm config delete prefix # I hate node
+
+# For golang
+export GOPATH=$HOME/Documents/go

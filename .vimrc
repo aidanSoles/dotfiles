@@ -35,7 +35,6 @@ highlight visual ctermfg=none ctermbg=LightMagenta cterm=none
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-autocmd BufEnter *.tf* colorscheme grape
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
 
@@ -44,10 +43,10 @@ set noeb vb t_vb=
 " Below found at https://www.reddit.com/r/vim/comments/1mzefb/what_does_your_statusline_look_like/
 set fillchars=stl:―,stlnc:—,vert:│,fold:۰,diff:·
 
-highlight folded cterm=bold ctermbg=none ctermfg=5
-highlight vertsplit cterm=none ctermbg=none ctermfg=9
-highlight statusline cterm=none ctermbg=none ctermfg=9
-highlight statuslinenc cterm=none ctermbg=none ctermfg=9
+highlight folded cterm=bold ctermbg=none ctermfg=5 guibg=NONE
+highlight vertsplit cterm=none ctermbg=none ctermfg=7 guibg=NONE
+highlight statusline cterm=none ctermbg=none ctermfg=7 guibg=NONE
+highlight statuslinenc cterm=none ctermbg=none ctermfg=7
 " }}}
 
 " Searching {{{
