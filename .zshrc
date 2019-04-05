@@ -100,22 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # vim errywhere
 set -o vi
 
-# My aliases
-alias rm=' rm' # Add space so it isn't added to history.
-alias rmi=' rm -i' # Add space so it isn't added to history.
-alias h='history | grep '
-alias svim='vim -S '
-alias xvim='vim -x '
-alias cpwd='pwd | pbcopy'
-alias gpwd='cd "$(pbpaste)"'
-# alias tmux="TERM=screen-256color-bce tmux" # Fix vim issues
-# alias new-todo='~/prog-files/terminal/new-todo' # TODO: Make work and remove hardcoding
-
 # For brew doctor
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || PATH="$PATH:/usr/local/sbin"
-
-# CLI vim commands
-# set -o vi # TODO: after autoprediction
 
 # For z
 . /usr/local/bin/z.sh
