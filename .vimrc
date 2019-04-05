@@ -49,6 +49,10 @@ highlight statusline cterm=none ctermbg=none ctermfg=7 guibg=NONE
 highlight statuslinenc cterm=none ctermbg=none ctermfg=7
 " }}}
 
+" Shell Commands {{{
+" set shellcmdflag=-ic " Recognize aliases
+" }}}
+
 " Searching {{{
 set incsearch
 set hlsearch
@@ -103,6 +107,8 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>ip :call FindIPAddresses()<CR>
 nnoremap <leader>tw :call TrimWhitespace()<CR>
 nnoremap <leader>tt :call TabToggle()<CR>
+nnoremap <leader>sp :set paste<CR>
+nnoremap <leader>snp :set nopaste<CR>
 " }}}
 
 " Custom Functions {{{
