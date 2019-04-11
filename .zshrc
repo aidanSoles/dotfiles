@@ -125,3 +125,6 @@ npm config delete prefix # I hate node
 
 # For golang
 export GOPATH=$HOME/Documents/go
+
+# jqi = jq "in-place"
+alias jqi='jqi() { TMP_FILE="$(date +%s%3N)"; cat "$1" | jq '.' > "$TMP_FILE" && cat "$TMP_FILE" > "$1" && rm "$TMP_FILE" }; jqi'
