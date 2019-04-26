@@ -47,6 +47,9 @@ highlight folded cterm=bold ctermbg=none ctermfg=5 guibg=NONE
 highlight vertsplit cterm=none ctermbg=none ctermfg=7 guibg=NONE
 highlight statusline cterm=none ctermbg=none ctermfg=7 guibg=NONE
 highlight statuslinenc cterm=none ctermbg=none ctermfg=7
+
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
 " }}}
 
 " Shell Commands {{{
