@@ -7,9 +7,6 @@
 [submodule ".tmux/plugins/tmux-resurrect"]
 	path = .tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
-[submodule ".vim/bundle/colorschemes"]
-	path = .vim/bundle/colorschemes
-	url = git@github.com:aidanSoles/vim-colorschemes.git
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
