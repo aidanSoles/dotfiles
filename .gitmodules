@@ -13,3 +13,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/aidanSoles/oh-my-zsh.git
+[submodule ".vim/bundle/colorschemes"]
+	path = .vim/bundle/colorschemes
+	url = https://github.com/aidanSoles/vim-colorschemes.git
