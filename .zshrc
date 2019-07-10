@@ -134,3 +134,17 @@ alias mass-unset="mass_unset() { unset \$(env | grep \"\$1\" | awk -F '=' '{prin
 
 # Source the rest of my aliases
 source ~/.zshenv
+
+# World clock
+world_clock () {
+    PT=`env TZ=US/Pacific date`
+    FR=`env TZ=Europe/Paris date`
+    JP=`env TZ=Asia/Tokyo date`
+    UT=`env TZ=Etc/GMT date`
+
+    echo "LA·····$PT"
+    echo "Paris··$FR"
+    echo "Tokyo··$JP"
+    echo "UTC····$UT"
+}
+alias world-clock='world_clock'
