@@ -104,7 +104,7 @@ set -o vi
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || PATH="$PATH:/usr/local/sbin"
 
 # For z
-. /usr/local/bin/z.sh
+. "/Users/${USER}/Documents/z/z.sh"
 
 # Bible verses
 source ~/.bible_verses
@@ -148,3 +148,9 @@ world_clock () {
     echo "UTC····$UT"
 }
 alias world-clock='world_clock'
+
+# Reverse search in zsh
+bindkey '^r' history-incremental-search-backward
+
+# Forward search in zsh
+bindkey '^R' history-incremental-pattern-search-backward
