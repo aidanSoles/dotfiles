@@ -31,7 +31,7 @@ set splitright
 colorscheme grape
 syntax on
 highlight search ctermfg=none ctermbg=LightMagenta cterm=none
-highlight visual ctermfg=none ctermbg=LightMagenta cterm=none
+highlight visual ctermfg=Black ctermbg=LightYellow cterm=none
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
