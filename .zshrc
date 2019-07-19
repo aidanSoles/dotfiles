@@ -127,7 +127,7 @@ npm config delete prefix # I hate node
 export GOPATH=$HOME/Documents/go
 
 # jqi = jq "in-place"
-alias jqi='jqi() { TMP_FILE="$(date +%s%3N)"; cat "$1" | jq '.' > "$TMP_FILE" && cat "$TMP_FILE" > "$1" && rm "$TMP_FILE" }; jqi'
+alias jqi='jqi() { TMP_FILE="$(date +%s%3N)"; cat "$1" | jq '.' > "$TMP_FILE" && cat "$TMP_FILE" > "$1" || rm "$TMP_FILE" }; jqi'
 
 # Mass unset variables matching parameter
 alias mass-unset="mass_unset() { unset \$(env | grep \"\$1\" | awk -F '=' '{print \$1}') }; mass_unset"
