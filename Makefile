@@ -1,7 +1,7 @@
 # Keep "Brewfile" in current directory (doesn't need to be copied)
 
 osx-grab:
-	declare -a FILES=(".bible_verses" ".tmux.conf" ".vimrc" ".zshrc" ".zshenv") \
+	declare -a FILES=(".bible_verses" ".tmux.conf" ".vimrc" ".zshrc" ".zshenv" ".skhdrc") \
 	; for file in "$${FILES[@]}"; do \
 		cp ~/"$${file}" .; \
 	done \
@@ -11,7 +11,7 @@ osx-grab:
 	done
 
 osx-put:
-	declare -a FILES=(".bible_verses" ".tmux.conf" ".vimrc" ".zshrc" ".zshenv") \
+	declare -a FILES=(".bible_verses" ".tmux.conf" ".vimrc" ".zshrc" ".zshenv" ".skhdrc") \
 	; for file in "$${FILES[@]}"; do \
 		cp ./"$${file}" ~; \
 	done \
