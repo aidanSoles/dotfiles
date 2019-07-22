@@ -28,10 +28,9 @@ set showmatch
 set ruler
 set splitbelow
 set splitright
-colorscheme grape
 syntax on
-highlight search ctermfg=none ctermbg=LightMagenta cterm=none
-highlight visual ctermfg=Black ctermbg=LightYellow cterm=none
+highlight search ctermfg=Black ctermbg=Blue cterm=none
+highlight visual ctermfg=Black ctermbg=Yellow cterm=none
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
