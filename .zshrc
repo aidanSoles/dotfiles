@@ -107,7 +107,7 @@ set -o vi
 . "/Users/${USER}/Documents/z/z.sh"
 
 # Bible verses
-source ~/.bible_verses
+source ~/.bible-verses
 
 # ZSH autosuggestions
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

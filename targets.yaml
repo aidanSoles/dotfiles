@@ -1,0 +1,20 @@
+osx:
+    directories:
+        - ".vim"
+        - ".oh-my-zsh"
+    files:
+        - ".vimrc"
+        - ".zshrc"
+arch:
+    directories:
+        - ".oh-my-zsh"
+        - ".tmux"
+        - ".vim"
+        - ".zsh"
+    files:
+        - ".bible-verses"
+        - ".config/kitty/kitty.conf"
+        - ".tmux.conf"
+        - ".vimrc"
+        - ".zshenv"
+        - ".zshrc"

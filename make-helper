@@ -1,0 +1,198 @@
+#!/bin/bash
+
+: '
+Overview:
+  * Helper script for Aidan`s dotfiles.
+  * Formatted according to: "https://google.github.io/styleguide/shell.xml" (with the exception of "https://google.github.io/styleguide/shell.xml?showone=Line_Length_and_Long_Strings#Line_Length_and_Long_Strings").
+
+TODO:
+  * Make `exit_with_message` use `syslog`.
+  * Make `--target` flag into subcommand (because it`s non-optional).
+  * Rewrite in `go` lol.
+'
+
+exit_with_message () {
+
+  ERR_CODE="${1}"
+  ERR_MESSAGE="${2}"
+
+  >&2 echo "${ERR_MESSAGE}"
+  exit "${ERR_CODE}"
+}
+
+info_with_message () {
+
+  INFO_MESSAGE="${1}"
+
+  >&2 echo "${INFO_MESSAGE}"
+}
+
+put () {
+
+  TARGET="${1}"
+  TARGETS_JSON="${2}"
+
+  info_with_message "INFO: Running action \`put\` for target \`${TARGET}\`."
+
+  declare -a "DIRECTORIES=($(echo "${TARGETS_JSON}" | jq -r '.directories | @sh'))"
+  declare -a "FILES=($(echo "${TARGETS_JSON}" | jq -r '.files | @sh'))"
+
+  for directory in "${DIRECTORIES[@]}"; do
+    ln -sf "$(pwd)/${directory}" "${HOME}/${directory}"
+    info_with_message "INFO: Soft link created from directory \`${HOME}/${directory}\` to \`$(pwd)/${directory}\`."
+  done
+
+  for file in "${FILES[@]}"; do
+    ln -sf "$(pwd)/${file}" "${HOME}/${file}"
+    info_with_message "INFO: Soft link created from file \`${HOME}/${file}\` to \`$(pwd)/${file}\`."
+  done
+}
+
+grab () {
+
+  TARGET="${1}"
+  TARGETS_JSON="${2}"
+
+  info_with_message "INFO: Running action \`put\` for target \`${TARGET}\`. NOTE: This action currently doesn't do anything and might be removed in the future."
+}
+
+clean () {
+
+  TARGET="${1}"
+  TARGETS_JSON="${2}"
+
+  info_with_message "INFO: Running action \`clean\` for target \`${TARGET}\`."
+
+  declare -a "DIRECTORIES=($(echo "${TARGETS_JSON}" | jq -r '.directories | @sh'))"
+  declare -a "FILES=($(echo "${TARGETS_JSON}" | jq -r '.files | @sh'))"
+
+  for directory in "${DIRECTORIES[@]}"; do
+
+    if [ -L "${HOME}/${directory}" ]; then
+      rm "${HOME}/${directory}"
+      info_with_message "INFO: Soft link from directory \`${HOME}/${directory}\` to \`$(pwd)/${directory}\` removed."
+    fi
+  done
+
+  for file in "${FILES[@]}"; do
+
+    if [ -L "${HOME}/${file}" ]; then
+      rm "${HOME}/${file}"
+      info_with_message "INFO: Soft link from file \`${HOME}/${file}\` to \`$(pwd)/${file}\` removed."
+    fi
+  done
+}
+
+# Main section (flag parsing and corresponding `action` function calls).
+
+command || exit_with_message 127 'ERR: Program `command` not found or not installed. Exiting.'
+command -v python3 > /dev/null 2>&1 || exit_with_message 127 'ERR: Program `python3` not found or not installed. Exiting.'
+
+if ! python3 -c 'import yaml' > /dev/null 2>&1; then
+    exit_with_message 127 'ERR: Python library `PyYAML` not found or not installed. Exiting.'
+fi
+
+if ! which jq > /dev/null 2>&1; then
+    exit_with_message 127 'ERR: Program `jq` not found or not installed. Exiting.'
+fi
+
+TARGET=
+MAP='targets.yaml' # Default value.
+MAP_SET='false'
+ACTION=
+
+while test $# -gt 0; do # Used "https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash" for the following `while` loop.
+
+  case "${1}" in
+
+    -h|-help|--help)
+      echo "${0}: Helper script for Aidan's dotfiles."
+      echo
+      echo "${0} [target] [map] action"
+      echo
+      echo 'Options:'
+      echo '  -h, --help·····Show help prompt.'
+      echo '  -t, --target···Target system for working with dotfiles (default is empty, so script won`t do anything unless target specified).'
+      echo '  -m, --map······YAML file containing one-to-many map of target systems to system-dependent (or independent) files and directories (default is `targets.yaml`).'
+      echo
+      echo 'Actions:'
+      echo '  put············Put (lay down) dotfiles for target system.'
+      echo '  grab···········Grab dotfiles on target system and copy them into current directory.'
+      echo '  clean··········Clean (remove) dotfiles on target system.'
+      echo
+      echo 'Requirements:'
+      echo '  * python3'
+      echo '  * PyYAML·······Run `pip3 install PyYAML` to install.'
+      echo '  * jq···········Use OS-specific package manager (for example, `brew install jq` on OSX).'
+      exit_with_message 0 'INFO: Script completed successfully.'
+    ;;
+
+    -t|-target|--target|-target\=*|--target\=*)
+      OLD_TARGET="${TARGET}"
+
+      if [[ "${1}" != *"="*  ]]; then # Doesn't have `=` sign, need to shift.
+        shift
+        TARGET="${1}"
+      else # Has `=` sign, need to tokenize and grab the end.
+        TARGET="$(echo "${1}" | awk -F '=' '{print $NF}')"
+      fi
+      TARGET="$(echo "${TARGET}" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")" # Strip beginning and ending quotes.
+
+      if [[ "${OLD_TARGET}" != "" ]]; then # Multiple targets specified.
+        exit_with_message 127 "ERR: Target already set as \`${OLD_TARGET}\`, but \`${TARGET}\` target specified as well. Exiting."
+      fi
+    ;;
+
+    -m|-map|--map|-map\=*|--map\=*)
+      OLD_MAP="${MAP}"
+
+      if [[ "${1}" != *"="*  ]]; then # Doesn't have `=` sign, need to shift.
+        shift
+        MAP="${1}"
+      else # Has `=` sign, need to tokenize and grab the end.
+        MAP="$(echo "${1}" | awk -F '=' '{print $NF}')"
+      fi
+      MAP="$(echo "${MAP}" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")" # Strip beginning and ending quotes.
+
+      if [[ "${MAP_SET}" != 'false' ]]; then # Multiple maps specified.
+        exit_with_message 127 "ERR: Map already set as \`${OLD_MAP}\`, but \`${MAP}\` map specified as well. Exiting."
+      fi
+      MAP_SET='true'
+
+      if [ ! -f "${MAP}" ]; then
+        exit_with_message 127 "ERR: File \`${MAP}\` not found. Exiting."
+      fi
+    ;;
+
+    put|grab|clean)
+
+      if [[ "${ACTION}" != "" ]]; then # Multiple actions specified.
+        exit_with_message 127 "ERR: Action already set as \`${ACTION}\`, but \`${1}\` action specified as well. Exiting."
+      fi
+      ACTION="${1}"
+    ;;
+
+    *)
+      info_with_message "INFO: Option or action \`${1}\` not found or not defined. Ignoring."
+    ;;
+  esac
+  shift
+done
+
+TARGETS_JSON="$(python3 -c "import yaml, json; f = open('${MAP}', 'r'); print(json.dumps(yaml.safe_load(f.read()))); f.close()")"
+TARGET_JSON="$(echo "${TARGETS_JSON}" | jq ".${TARGET}")"
+
+if [[ "${ACTION}" == 'put' ]]; then
+  put "${TARGET}" "${TARGET_JSON}"
+
+elif [[ "${ACTION}" == 'grab' ]]; then
+  grab "${TARGET}" "${TARGET_JSON}"
+
+elif [[ "${ACTION}" == 'clean' ]]; then
+  clean "${TARGET}" "${TARGET_JSON}"
+
+else
+  exit_with_message 127 "ERR: Action \`${ACTION}\` not found or not defined. Exiting."
+fi
+
+exit_with_message 0 'INFO: Script completed successfully.'
