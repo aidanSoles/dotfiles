@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/${USER}/.oh-my-zsh"
+export ZSH="/home/${USER}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -104,7 +104,7 @@ set -o vi
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || PATH="$PATH:/usr/local/sbin"
 
 # For z
-. "/Users/${USER}/Documents/z/z.sh"
+. "/home/${USER}/Documents/z/z.sh"
 
 # Bible verses
 source ~/.bible-verses
@@ -113,18 +113,19 @@ source ~/.bible-verses
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ZSH syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # For Pulumi
 [[ ":$PATH:" =~ ":$HOME/.pulumi/bin:" ]] || PATH="$PATH:$HOME/.pulumi/bin"
 
 # For NVM
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh" > /dev/null 2>&1 # python > javascript
-npm config delete prefix # I hate node
+# export NVM_DIR="$HOME/.nvm"
+# . "/usr/local/opt/nvm/nvm.sh" > /dev/null 2>&1 # python > javascript
+# npm config delete prefix # I hate node
 
 # For golang
 export GOPATH=$HOME/Documents/go
+export PATH="${PATH}:/usr/local/stow/go-1.12.9/bin"
 
 # jqi = jq "in-place"
 alias jqi='jqi() { TMP_FILE="$(date +%s%3N)"; cat "$1" | jq '.' > "$TMP_FILE" && cat "$TMP_FILE" > "$1" || rm "$TMP_FILE" }; jqi'
