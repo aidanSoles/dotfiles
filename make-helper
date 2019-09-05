@@ -38,7 +38,8 @@ put () {
   declare -a "FILES=($(echo "${TARGETS_JSON}" | jq -r '.files | @sh'))"
 
   for directory in "${DIRECTORIES[@]}"; do
-    ln -sf "$(pwd)/${directory}" "${HOME}/${directory}"
+    rm -f "${HOME}/${directory}" # To avoid circular symlinks.
+    ln -s "$(pwd)/${directory}" "${HOME}/${directory}"
     info_with_message "INFO: Soft link created from directory \`${HOME}/${directory}\` to \`$(pwd)/${directory}\`."
   done
 
@@ -69,7 +70,7 @@ clean () {
   for directory in "${DIRECTORIES[@]}"; do
 
     if [ -L "${HOME}/${directory}" ]; then
-      rm "${HOME}/${directory}"
+      rm -f "${HOME}/${directory}"
       info_with_message "INFO: Soft link from directory \`${HOME}/${directory}\` to \`$(pwd)/${directory}\` removed."
     fi
   done
@@ -77,7 +78,7 @@ clean () {
   for file in "${FILES[@]}"; do
 
     if [ -L "${HOME}/${file}" ]; then
-      rm "${HOME}/${file}"
+      rm -f "${HOME}/${file}"
       info_with_message "INFO: Soft link from file \`${HOME}/${file}\` to \`$(pwd)/${file}\` removed."
     fi
   done
