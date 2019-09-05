@@ -8,6 +8,7 @@ osx:
 arch:
     directories:
         - ".config/solarized-everything-css"
+        - ".config/qutebrowser"
         - ".oh-my-zsh"
         - ".tmux"
         - ".vim"
