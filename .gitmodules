@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/colorschemes"]
 	path = .vim/bundle/colorschemes
 	url = https://github.com/aidanSoles/vim-colorschemes.git
+[submodule ".config/solarized-everything-css"]
+	path = .config/solarized-everything-css
+	url = https://github.com/alphapapa/solarized-everything-css.git
