@@ -557,3 +557,5 @@ config.set('completion.cmd_history_max_items', 20)
 # config.set('zoom.levels', )
 # config.set('zoom.mouse_divider', )
 # config.set('zoom.text_only', )
+
+config.bind(',d', 'config-cycle content.user_stylesheets ~/.config/solarized-everything-css/css/solarized-dark/solarized-dark-all-sites.css ""')
