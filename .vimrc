@@ -148,6 +148,7 @@ endfun
 
 " Copying {{{
 set clipboard=unnamed
+set mouse=v
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0

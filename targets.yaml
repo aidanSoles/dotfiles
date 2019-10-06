@@ -1,9 +1,20 @@
+# TODO:
+#   * Make destination path for each target (for things like qutebrowser)
+
 osx:
     directories:
-        - ".vim"
+        - ".config/solarized-everything-css"
+        - ".config/qutebrowser"
         - ".oh-my-zsh"
+        - ".tmux"
+        - ".vim"
+        - ".zsh"
     files:
+        - ".bible-verses"
+        - ".config/kitty/kitty.conf"
+        - ".tmux.conf"
         - ".vimrc"
+        - ".zshenv"
         - ".zshrc"
 arch:
     directories:

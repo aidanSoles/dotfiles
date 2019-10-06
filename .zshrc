@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/${USER}/.oh-my-zsh"
+export ZSH="/Users/${USER}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -22,7 +22,6 @@ ZSH_THEME="aidan"
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
@@ -97,14 +96,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Fix path
+export PATH="${PATH}:/usr/local/bin"
+
 # vim errywhere
 set -o vi
+alias vim='vi' # To get `brew install`ed version of Vim (can't delete `/usr/bin/vim` without SIP turned off)
 
 # For brew doctor
 [[ ":$PATH:" =~ ":/usr/local/sbin:" ]] || PATH="$PATH:/usr/local/sbin"
 
 # For z
-. "/home/${USER}/Documents/z/z.sh"
+source "/Users/${USER}/Documents/z/z.sh"
 
 # Bible verses
 source ~/.bible-verses
@@ -113,7 +116,7 @@ source ~/.bible-verses
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ZSH syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # For Pulumi
 [[ ":$PATH:" =~ ":$HOME/.pulumi/bin:" ]] || PATH="$PATH:$HOME/.pulumi/bin"
@@ -122,10 +125,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # export NVM_DIR="$HOME/.nvm"
 # . "/usr/local/opt/nvm/nvm.sh" > /dev/null 2>&1 # python > javascript
 # npm config delete prefix # I hate node
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 # For golang
 export GOPATH=$HOME/Documents/go
-export PATH="${PATH}:/usr/local/stow/go-1.12.9/bin"
+export GOBIN=/usr/local/bin
 
 # jqi = jq "in-place"
 alias jqi='jqi() { TMP_FILE="$(date +%s%3N)"; cat "$1" | jq '.' > "$TMP_FILE" && cat "$TMP_FILE" > "$1" || rm "$TMP_FILE" }; jqi'
@@ -155,3 +160,6 @@ bindkey '^r' history-incremental-search-backward
 
 # Forward search in zsh
 bindkey '^R' history-incremental-pattern-search-backward
+
+# Palantir specific variables
+source ~/.zshrc-palantir
