@@ -12,3 +12,6 @@ tree 1.8.0-1
 xsel 1.2.0.20160929-2
 nomacs 3.12-7
 bluez-tools 0.2.0-4
+bluez-utils 5.50-6
+mps-youtube 0.2.8-2
+mplayer 38139-1
