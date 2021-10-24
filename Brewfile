@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+brew "go"
 brew "minikube"
 brew "tmux"
 brew "vim"
