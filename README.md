@@ -14,6 +14,10 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%2
     * Dependencies: None.
     * Note: I turned on `Sync to and from other devices` on the startup page so that I don't have to redo settings across devices.
 
+### Static Config
+
+All the config files in the `home` directory can be symlinked into the `$HOME` directory.
+
 ## Old Version
 
 I used to get super into dotfiles. I even made a [kind](https://kind.sigs.k8s.io/)-backed [Concourse](https://concourse-ci.org/) cluster, in conjunction with a local SSH-daemon and [this SSH resource](https://github.com/edtan/concourse-ssh-resource), to SSH to my local machine and install the various groups of config--anywhere from static `.xinitrc`'s to [Consul template](https://github.com/hashicorp/consul-template)-rendered `.zshrc`'s--on my machine, all with the use of a single command (all this code is in a private repo--I haven't put in the effort to clean it up before I make it public).
