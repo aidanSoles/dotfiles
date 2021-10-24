@@ -1,5 +1,9 @@
 # Aidan's Dotfiles
 
+## New Version
+
+Installations should (roughly) follow [this format](https://nomnoml.com/#view/%2F%2F%20g%0A%0A%5Bsystem%5D%0A%0A%5Bbrew%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bversioned%20script%20or%20repo%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bunversioned%20script%20or%20repo%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bapt%7C%0Alinux%5D%0A%0A%5Bapt-get%7C%0Alinux%5D%0A%0A%5Bsystem%5D-%3E%5Bbrew%5D%0A%5Bbrew%5Dnot%20available-%3E%5Bversioned%20script%20or%20repo%5D%0A%5Bversioned%20script%20or%20repo%5Dnot%20available-%3E%5Bunversioned%20script%20or%20repo%5D%0A%5Bunversioned%20script%20or%20repo%5Dnot%20available-%3E%5Bapt%5D%0A%5Bapt%5Dnot%20available-%3E%5Bapt-get%5D%0A%0A%5Bpython%5D-%3E%5Bpoetry%5D%0A%5Bpoetry%5Dnot%20available-%3E%5Bpip3%20with%20virtualenv%5D%0A%5Bpip3%20with%20virtualenv%5Dnot%20available-%3E%5Bpip%20with%20virtualenv%5D%0A%5Bpip%20with%20virtualenv%5Dnot%20available-%3E%5Bpip3%20on%20system%5D%0A%5Bpip3%20on%20system%5Dnot%20available-%3E%5Bpip%20on%20system%5D).
+
 ## Old Version
 
 I used to get super into dotfiles. I even made a [kind](https://kind.sigs.k8s.io/)-backed [Concourse](https://concourse-ci.org/) cluster, in conjunction with a local SSH-daemon and [this SSH resource](https://github.com/edtan/concourse-ssh-resource), to SSH to my local machine and install the various groups of config--anywhere from static `.xinitrc`'s to [Consul template](https://github.com/hashicorp/consul-template)-rendered `.zshrc`'s--on my machine, all with the use of a single command (all this code is in a private repo--I haven't put in the effort to clean it up before I make it public).
