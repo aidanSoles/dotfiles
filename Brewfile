@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
+brew "tmux"
 brew "vim"
 brew "zsh"
 brew "zsh-completions"

@@ -13,6 +13,9 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%2
     * Installation: Downloaded from [here](https://code.visualstudio.com/Download#) for my Linux machine (`cask` is not available for `brew` on Linux, `apt*` didn't have it, etc.).
     * Dependencies: None.
     * Note: I turned on `Sync to and from other devices` on the startup page so that I don't have to redo settings across devices.
+* `.tmux`/`oh-my-tmux`:
+    * Installation: Followed the first set of commands from [here](https://github.com/gpakosz/.tmux/tree/90cdbbc32fb55017077d08f1f5e1597a0be70e73#installation).
+    * Dependencies: None.
 
 ### Static Config
 
