@@ -9,6 +9,10 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%2
 * `oh-my-zsh`:
     * Installation: Use `curl` from [here](https://github.com/ohmyzsh/ohmyzsh/tree/master#basic-installation) (since it updates all the time anyway).
     * Dependencies: `zsh`.
+* `Visual Studio Code`:
+    * Installation: Downloaded from [here](https://code.visualstudio.com/Download#) for my Linux machine (`cask` is not available for `brew` on Linux, `apt*` didn't have it, etc.).
+    * Dependencies: None.
+    * Note: I turned on `Sync to and from other devices` on the startup page so that I don't have to redo settings across devices.
 
 ## Old Version
 
