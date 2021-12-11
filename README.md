@@ -2,17 +2,13 @@
 
 ## New Version
 
-Installations should (roughly) follow [this format](https://nomnoml.com/#view/%2F%2F%20g%0A%0A%5Bsystem%5D%0A%0A%5Bbrew%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bversioned%20script%20or%20repo%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bunversioned%20script%20or%20repo%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bapt%7C%0Alinux%5D%0A%0A%5Bapt-get%7C%0Alinux%5D%0A%0A%5Bsystem%5D-%3E%5Bbrew%5D%0A%5Bbrew%5Dnot%20available-%3E%5Bversioned%20script%20or%20repo%5D%0A%5Bversioned%20script%20or%20repo%5Dnot%20available-%3E%5Bunversioned%20script%20or%20repo%5D%0A%5Bunversioned%20script%20or%20repo%5Dnot%20available-%3E%5Bapt%5D%0A%5Bapt%5Dnot%20available-%3E%5Bapt-get%5D%0A%0A%5Bpython%5D-%3E%5Bpoetry%5D%0A%5Bpoetry%5Dnot%20available-%3E%5Bpip3%20with%20virtualenv%5D%0A%5Bpip3%20with%20virtualenv%5Dnot%20available-%3E%5Bpip%20with%20virtualenv%5D%0A%5Bpip%20with%20virtualenv%5Dnot%20available-%3E%5Bpip3%20on%20system%5D%0A%5Bpip3%20on%20system%5Dnot%20available-%3E%5Bpip%20on%20system%5D).
+Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5Bsystem%5D%0A%0A%5Bnix%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bbrew%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bversioned%20script%20or%20repo%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bunversioned%20script%20or%20repo%7C%0Aosx%7C%0Alinux%5D%0A%0A%5Bapt%7C%0Alinux%5D%0A%0A%5Bapt-get%7C%0Alinux%5D%0A%0A%5Bsystem%5D-%3E%5Bnix%5D%0A%5Bnix%5Dnot%20available-%3E%5Bbrew%5D%0A%5Bbrew%5Dnot%20available-%3E%5Bversioned%20script%20or%20repo%5D%0A%5Bversioned%20script%20or%20repo%5Dnot%20available-%3E%5Bunversioned%20script%20or%20repo%5D%0A%5Bunversioned%20script%20or%20repo%5Dnot%20available-%3E%5Bapt%5D%0A%5Bapt%5Dnot%20available-%3E%5Bapt-get%5D%0A%0A%5Bpython%5D-%3E%5Bpoetry%5D%0A%5Bpoetry%5Dnot%20available-%3E%5Bpip3%20with%20virtualenv%5D%0A%5Bpip3%20with%20virtualenv%5Dnot%20available-%3E%5Bpip%20with%20virtualenv%5D%0A%5Bpip%20with%20virtualenv%5Dnot%20available-%3E%5Bpip3%20on%20system%5D%0A%5Bpip3%20on%20system%5Dnot%20available-%3E%5Bpip%20on%20system%5D).
 
 ### Packages (Not In Config Files)
 
-* `oh-my-zsh`:
-    * Installation: Use `curl` from [here](https://github.com/ohmyzsh/ohmyzsh/tree/master#basic-installation) (since it updates all the time anyway).
-    * Dependencies: `zsh`.
-* `Visual Studio Code`:
-    * Installation: Downloaded from [here](https://code.visualstudio.com/Download#) for my Linux machine (`cask` is not available for `brew` on Linux, `apt*` didn't have it, etc.).
+* `nix`:
+    * Installation: Use `curl` from [here](https://github.com/NixOS/nix/tree/f24ac3115f154edf72b995cffae6da3793862294#installation).
     * Dependencies: None.
-    * Note: I turned on `Sync to and from other devices` on the startup page so that I don't have to redo settings across devices.
 * `.tmux`/`oh-my-tmux`:
     * Installation: Followed the first set of commands from [here](https://github.com/gpakosz/.tmux/tree/90cdbbc32fb55017077d08f1f5e1597a0be70e73#installation).
     * Dependencies: None.

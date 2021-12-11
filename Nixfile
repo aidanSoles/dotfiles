@@ -1,0 +1,8 @@
+fish-3.3.1
+go-1.16.9
+minikube-1.23.2
+nix-2.4
+podman-wrapper-3.4.1
+tmux-3.2a
+vim-8.2.3337
+vscode-1.62.2 # i turned on `Sync to and from other devices` on the startup page so that i do not have to redo settings across devices
