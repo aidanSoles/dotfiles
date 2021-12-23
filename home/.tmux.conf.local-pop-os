@@ -347,6 +347,8 @@ tmux_conf_copy_to_os_clipboard=false
 # move status line to top
 #set -g status-position top
 
+# set default shell to fish
+set-option -g default-shell /home/aidan/.nix-profile/bin/fish
 
 # -- tpm -----------------------------------------------------------------------
 
