@@ -11,7 +11,7 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
     * Dependencies: None.
 * `.tmux`/`oh-my-tmux`:
     * Installation: Followed the first set of commands from [here](https://github.com/gpakosz/.tmux/tree/90cdbbc32fb55017077d08f1f5e1597a0be70e73#installation).
-    * Dependencies: None.
+    * Dependencies: `fish` (run `ln -s (pwd)/home/.tmux.conf.local-<os> ~/.tmux.conf.local` to configure).
 
 ### Static Config
 
