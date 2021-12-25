@@ -15,6 +15,10 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
 * `LunarVim`:
     * Installation: Followed the first set of commands from [here](https://github.com/LunarVim/LunarVim/tree/0.6.1#install-in-one-command).
     * Dependencies: `neovim`.
+* `kitty`:
+    * Installation: Followed the first set of commands from [here](https://sw.kovidgoyal.net/kitty/binary/#binary-install), then the first set of commands from [here](https://sw.kovidgoyal.net/kitty/binary/#desktop-integration-on-linux).
+    * Dependencies: None.
+    * Notes: Installed the [dracula theme](https://github.com/dracula/kitty) using `git clone`, and the first set of commands from the `Install` section [here](https://draculatheme.com/kitty).
 
 ### Static Config
 
