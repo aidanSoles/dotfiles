@@ -12,9 +12,13 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
 * `.tmux`/`oh-my-tmux`:
     * Installation: Followed the first set of commands from [here](https://github.com/gpakosz/.tmux/tree/90cdbbc32fb55017077d08f1f5e1597a0be70e73#installation).
     * Dependencies: `fish` (run `ln -s (pwd)/home/.tmux.conf.local-<os> ~/.tmux.conf.local` to configure).
+* `neovim`:
+    * Installation: Downloaded `nvim.appimage` from [here](https://github.com/neovim/neovim/releases/tag/v0.6.0), then moved it to `~/.local/bin/nvim`, and ran `chmod +x ~/.local/bin/nvim`.
+    * Dependencies: None.
+    * Notes: Would have used `nix` to install, but the latest version [here](https://search.nixos.org/packages) was `0.5.1` (and I needed version `0.6.0` and higher).
 * `LunarVim`:
     * Installation: Followed the first set of commands from [here](https://github.com/LunarVim/LunarVim/tree/0.6.1#install-in-one-command).
-    * Dependencies: `neovim`.
+    * Dependencies: `neovim` (version `0.6.0` and higher).
 * `kitty`:
     * Installation: Followed the first set of commands from [here](https://sw.kovidgoyal.net/kitty/binary/#binary-install), then the first set of commands from [here](https://sw.kovidgoyal.net/kitty/binary/#desktop-integration-on-linux).
     * Dependencies: None.
