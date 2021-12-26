@@ -12,6 +12,13 @@ source ~/.config/fish/conf.d/aliases.fish
 
 # start: key bindings
 
+# vim key bindings (with "jj" -> <esc>)
 set -g fish_key_bindings fish_vi_key_bindings
+bind -M insert -m default jj backward-char force-repaint
+
+# remap <caps-lock> -> <ctrl>
+if test -f ~/.xinitrc
+  source ~/.xinitrc
+end
 
 # end: key bindings
