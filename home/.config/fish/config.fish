@@ -17,8 +17,8 @@ set -g fish_key_bindings fish_vi_key_bindings
 bind -M insert -m default jj backward-char force-repaint
 
 # remap <caps-lock> -> <ctrl>
-if test -f ~/.xinitrc
-  source ~/.xinitrc
+if test -f ~/.Xmodmap
+  setxkbmap && xmodmap ~/.Xmodmap > /dev/null 2>&1
 end
 
 # end: key bindings
