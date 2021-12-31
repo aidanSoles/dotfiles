@@ -1,4 +1,5 @@
 # output of `nix-env -qa --installed "*"` (with comments added)
+deno-1.15.3
 fish-3.3.1
 go-1.16.9
 jq-1.6
