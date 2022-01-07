@@ -40,4 +40,4 @@ Then I got tired.
 
 I've instead decided to use this repo as a high-level, source-of-truth spot to track what I've installed on a system (packages, static files, etc.), with those things' dependencies. I've moved from trying to figure out the "how", to just listing the "what".
 
-If the old version of code is available at `357ec03944bc2030f97a8eedaaf4b395e0e9081d`.
+If you want to see the old version of code, it's available at `357ec03944bc2030f97a8eedaaf4b395e0e9081d`.
