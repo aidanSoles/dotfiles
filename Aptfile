@@ -1,2 +1,1 @@
 # `apt list --installed` output is trash, so just manually list installed packages (with comments) below:
-qutebrowser # ideally wanted to use https://github.com/dracula/qutebrowser (but could not get it to work), so i used the config from https://github.com/qutebrowser/qutebrowser/discussions/5733#discussioncomment-82534 (which works for now)
