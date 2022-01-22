@@ -12,6 +12,10 @@ lvim.plugins = {
 lvim.keys.insert_mode["jj"] = "<esc>" -- remap "jj" -> <esc>
 vim.opt.timeoutlen = 300 -- make key timeout slower for "jj"
 
+-- scroll to top/bottom of the line based off of scrolling direction (https://github.com/aidanSoles/dotfiles/blob/357ec03944bc2030f97a8eedaaf4b395e0e9081d/.vimrc#L72-L73)
+lvim.keys.normal_mode["j"] = "gj" -- remap "j" -> "gj"
+lvim.keys.normal_mode["k"] = "gk" -- remap "k" -> "gk"
+
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>" -- remap <ctrl> + "s" -> save
 
 lvim.keys.normal_mode[",m"] = ":mksession<cr>" -- remap , + "m" -> make session
