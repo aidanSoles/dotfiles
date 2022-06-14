@@ -1,6 +1,7 @@
 # start: paths
 
 fish_add_path /home/aidan/.local/bin
+fish_add_path /home/linuxbrew/.linuxbrew/bin
 
 # end: paths
 
