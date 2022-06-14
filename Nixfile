@@ -1,6 +1,8 @@
 # output of `nix-env -qa --installed "*"` (with comments added)
+cabal-install-3.6.2.0
 deno-1.15.3
 fish-3.3.1
+ghc-8.10.7
 go-1.16.9
 google-chrome-95.0.4638.69
 google-cloud-sdk-362.0.0
@@ -10,6 +12,7 @@ nix-2.4
 podman-wrapper-3.4.1 # had to add the line `unqualified-search-registries = ["docker.io"]` to `/etc/containers/registries.conf` to get podman to search docker hub
 pulumi-3.17.0
 python3.9-poetry-1.1.10
+stack-2.7.3
 tldr-1.3.0
 tmux-3.2a
 vim-8.2.3337
