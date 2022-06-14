@@ -1,6 +1,7 @@
 # output of `nix-env -qa --installed "*"` (with comments added)
 cabal-install-3.6.2.0
 cfssl-1.6.1
+cmake-3.21.2
 deno-1.15.3
 fish-3.3.1
 ghc-8.10.7
