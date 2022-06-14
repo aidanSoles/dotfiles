@@ -8,6 +8,7 @@ go-1.16.9
 google-chrome-95.0.4638.69
 google-cloud-sdk-362.0.0
 icdiff-1.9.5
+img2pdf-0.4.3
 jq-1.6
 llvm-12.0.1
 mdl-0.11.0
