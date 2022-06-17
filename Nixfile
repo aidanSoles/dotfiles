@@ -4,6 +4,7 @@ cfssl-1.6.1
 cmake-3.21.2
 deno-1.15.3
 fish-3.3.1
+gh-2.12.1
 ghc-8.10.7
 git-lfs-3.2.0
 go-1.16.9
