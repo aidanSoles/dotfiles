@@ -27,6 +27,10 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
     * Installation: Followed the first set of commands from [here](https://github.com/oh-my-fish/oh-my-fish#installation).
     * Dependencies: `fish`.
     * Notes: Would have installed a specific version, but it updates all the time by design (i.e. `omf update`), so just used `master`. Also, using the [cmorrell theme](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#cmorrell) (ran `omf install cmorrell`, followed by `omf theme cmorrell`).
+* `oh-my-zsh`:
+    * Installation: Use `curl` from [here](https://github.com/ohmyzsh/ohmyzsh#basic-installation).
+    * Dependencies: `zsh`.
+    * Notes: Would have installed a specific version, but it updates all the time by design.
 
 ### Static Config
 
