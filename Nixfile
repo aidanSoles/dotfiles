@@ -21,6 +21,7 @@ nmap-7.92
 podman-wrapper-3.4.1 # had to add the line `unqualified-search-registries = ["docker.io"]` to `/etc/containers/registries.conf` to get podman to search docker hub
 pulumi-3.17.0
 python3.9-poetry-1.1.10
+ripgrep-13.0.0
 stack-2.7.3
 tldr-1.3.0
 tmux-3.2a
