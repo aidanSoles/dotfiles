@@ -18,6 +18,7 @@ mdl-0.11.0
 minikube-1.25.2
 nix-2.9.1
 nmap-7.92
+oh-my-zsh-2022-06-12
 podman-wrapper-4.1.0 # had to add the line `unqualified-search-registries = ["docker.io"]` to `/etc/containers/registries.conf` to get podman to search docker hub
 pulumi-3.31.0
 python3.9-poetry-1.1.13
@@ -29,3 +30,6 @@ vim-8.2.4975
 xclip-0.13
 yamllint-1.26.3
 zsh-5.9
+zsh-syntax-highlighting-0.7.1
+zsh-vi-mode-0.8.5
+zsh-z-unstable-2021-02-15
