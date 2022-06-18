@@ -78,6 +78,7 @@ source $ZSH/oh-my-zsh.sh
 
 source /home/aidan/.nix-profile/share/zsh-z/zsh-z.plugin.zsh
 source /home/aidan/.nix-profile/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /home/aidan/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
