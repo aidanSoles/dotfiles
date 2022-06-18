@@ -77,6 +77,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 source /home/aidan/.nix-profile/share/zsh-z/zsh-z.plugin.zsh
+source /home/aidan/.nix-profile/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # User configuration
 
