@@ -80,6 +80,8 @@ source /home/aidan/.nix-profile/share/zsh-z/zsh-z.plugin.zsh
 source /home/aidan/.nix-profile/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /home/aidan/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source /home/aidan/.bash_aliases
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
