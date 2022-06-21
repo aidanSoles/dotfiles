@@ -27,7 +27,7 @@ stack-2.7.5
 tldr-1.4.3
 tmux-3.3a
 vim-8.2.4975
-vscode-1.62.2 # i turned on `Sync to and from other devices` on the startup page so that i do not have to redo settings across devices
+vscode-1.68.0 # i turned on `Sync to and from other devices` on the startup page so that i do not have to redo settings across devices
 xclip-0.13
 yamllint-1.26.3
 zsh-5.9
