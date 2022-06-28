@@ -107,3 +107,6 @@ source /home/aidan/.bash_aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PATH=/home/aidan/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock

@@ -27,6 +27,10 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
     * Installation: Followed the first set of commands from [here](https://github.com/oh-my-fish/oh-my-fish#installation).
     * Dependencies: `fish`.
     * Notes: Would have installed a specific version, but it updates all the time by design (i.e. `omf update`), so just used `master`. Also, using the [cmorrell theme](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#cmorrell) (ran `omf install cmorrell`, followed by `omf theme cmorrell`).
+* `docker`:
+    * Installation: `git clone`'d [this repo](https://github.com/docker/docker-install), ran `sh rootless-install.sh` as my regular user, ran the commands outputted by the install script (then re-ran the install script until it finished), and added the aliases outputted by the install script to `~/.zshrc`.
+    * Dependencies: None.
+    * Notes: Installed rootless Docker instead of the regular version.
 
 ### Static Config
 
