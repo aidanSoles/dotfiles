@@ -35,6 +35,10 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
     * Installation: Ran `sudo apt install virtualbox`, found the matching extension pack version from [here](https://www.virtualbox.org/wiki/Downloads), and ran `VBoxManage extpack install <vbox-extpack-file>`.
     * Dependencies: None.
     * Notes: Enabled VT-D and made sure secure boot was disabled.
+* `poetry`:
+    * Installation: `git clone`'d [this repo](https://github.com/python-poetry/poetry), ran `git checkout <version>`, and ran `cat get-poetry.py | python3 -`.
+    * Dependencies: `python3` (system-level).
+    * Notes: Installed (version `1.1.13`) using the repo scripts (and not `nix`) and system-level `python3` so `poetry` will have access to system-level resources/libraries.
 
 ### Static Config
 
