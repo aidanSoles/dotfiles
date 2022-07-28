@@ -19,13 +19,16 @@ minikube-1.25.2
 nix-2.9.1
 nmap-7.92
 oh-my-zsh-2022-06-12
+picocom-3.2a
 podman-wrapper-4.1.0 # had to add the line `unqualified-search-registries = ["docker.io"]` to `/etc/containers/registries.conf` to get podman to search docker hub
 pulumi-3.31.0
-python3.9-poetry-1.1.13
 ripgrep-13.0.0
 stack-2.7.5
+tig-2.5.5
 tldr-1.4.3
 tmux-3.3a
+traceroute-2.1.0
+tree-2.0.2
 vim-8.2.4975
 vscode-1.68.0 # i turned on `Sync to and from other devices` on the startup page so that i do not have to redo settings across devices
 xclip-0.13
