@@ -31,6 +31,10 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
     * Installation: `git clone`'d [this repo](https://github.com/docker/docker-install), ran `sh rootless-install.sh` as my regular user, ran the commands outputted by the install script (then re-ran the install script until it finished), and added the aliases outputted by the install script to `~/.zshrc`.
     * Dependencies: None.
     * Notes: Installed rootless Docker instead of the regular version.
+* `virtualbox`:
+    * Installation: Ran `sudo apt install virtualbox`, found the matching extension pack version from [here](https://www.virtualbox.org/wiki/Downloads), and ran `VBoxManage extpack install <vbox-extpack-file>`.
+    * Dependencies: None.
+    * Notes: Enabled VT-D and made sure secure boot was disabled.
 
 ### Static Config
 
