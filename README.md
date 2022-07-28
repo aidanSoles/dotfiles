@@ -39,6 +39,9 @@ Installations should (roughly) follow [this format](https://nomnoml.com/#view/%5
     * Installation: `git clone`'d [this repo](https://github.com/python-poetry/poetry), ran `git checkout <version>`, and ran `cat get-poetry.py | python3 -`.
     * Dependencies: `python3` (system-level).
     * Notes: Installed (version `1.1.13`) using the repo scripts (and not `nix`) and system-level `python3` so `poetry` will have access to system-level resources/libraries.
+* `openssh-server`:
+    * Installation: Followed [these directions](https://linuxhint.com/find-running-ssh-port) using `apt` (not `apt-get`), `enable`'d, then `start`ed the `ssh` daemon using `systemd`.
+    * Dependencies: None.
 
 ### Static Config
 
