@@ -24,6 +24,7 @@ podman-wrapper-4.1.0 # had to add the line `unqualified-search-registries = ["do
 pulumi-3.31.0
 ripgrep-13.0.0
 stack-2.7.5
+tig-2.5.5
 tldr-1.4.3
 tmux-3.3a
 traceroute-2.1.0
