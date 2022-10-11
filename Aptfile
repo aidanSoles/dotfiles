@@ -1,2 +1,3 @@
 # `apt list --installed` output is trash, so just manually list installed packages (with comments) below:
 openvpn3 # followed: https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux (and also had to update libc6)
+remmina remmina-plugin-rdp remmina-plugin-secret # followed: https://remmina.org/how-to-install-remmina/#ubuntu
