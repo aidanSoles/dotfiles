@@ -12,6 +12,7 @@ git-lfs-3.2.0
 go-1.17.10
 google-chrome-102.0.5005.115
 google-cloud-sdk-387.0.0
+hcl2json-0.3.4
 icdiff-1.9.5
 img2pdf-0.4.4
 jq-1.6
