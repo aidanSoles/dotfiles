@@ -7,6 +7,13 @@ lvim.plugins = {
 
 -- end: plugins
 
+-- start: vim options
+
+vim.opt.number = true
+vim.opt.ruler = true
+
+-- end: vim options
+
 -- start: key bindings
 
 lvim.keys.insert_mode["jj"] = "<esc>" -- remap "jj" -> <esc>
