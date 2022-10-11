@@ -3,6 +3,7 @@ cabal-install-3.6.2.0
 cfssl-1.6.1
 cmake-3.22.3
 deno-1.22.3
+docker-compose-2.6.0
 fish-3.4.1
 gh-2.12.1
 ghc-9.0.2
