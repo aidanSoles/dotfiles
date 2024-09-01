@@ -66,9 +66,16 @@ vim.keymap.set("n", "<leader>sa", "<esc>ggVG", { remap = true, silent = false, d
 vim.keymap.set("n", "<leader>n", ":nohlsearch<CR>", { remap = true, silent = false, desc = "" })
 vim.keymap.set("n", "<leader>sp", ":set paste<CR>", { remap = true, silent = false, desc = "" })
 vim.keymap.set("n", "<leader>snp", ":set nopaste<CR>", { remap = true, silent = false, desc = "" })
+vim.keymap.set("n", "<leader>=", "<C-w>=", { remap = true, silent = false, desc = "" })
 -- -- (END)   Leader shortcuts
 
 -- -- (START) Custom functions
 -- TODO: Figure out LSP stuff so TrimWhitespace is not needed.
 -- -- (END)   Custom functions
 -- (END)   My .vimrc
+
+-- (START) Package management
+-- -- (START) lazy.nvim
+require("config.lazy")
+-- -- (END)   lazy.nvim
+-- (END)   Package management
