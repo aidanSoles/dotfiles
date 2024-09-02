@@ -51,22 +51,63 @@ vim.keymap.set("i", "jj", "<esc>", { remap = true, silent = false, desc = 'Chang
 -- -- (END)   Custom leader/escape
 
 -- -- (START) Leader shortcuts
-vim.keymap.set("n", "<leader>s", ":mksession<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>sf", ":mksession!<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>fi", ":setlocal foldmethod=indent<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>fm", ":setlocal foldmethod=marker<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>r", ":20winc ><CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>l", ":20winc <<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>u", ":res +5<<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>d", ":res -5<<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>wq", ":wqall<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>wa", ":wall<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>qa", ":qall<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>sa", "<esc>ggVG", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>n", ":nohlsearch<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>sp", ":set paste<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>snp", ":set nopaste<CR>", { remap = true, silent = false, desc = "" })
-vim.keymap.set("n", "<leader>=", "<C-w>=", { remap = true, silent = false, desc = "" })
+vim.keymap.set("n", "<leader>s", ":mksession<CR>", { remap = true, silent = false, desc = '"s" = "session' })
+vim.keymap.set("n", "<leader>sf", ":mksession!<CR>", { remap = true, silent = false, desc = '"sf" = "session force"' })
+vim.keymap.set(
+	"n",
+	"<leader>fi",
+	":setlocal foldmethod=indent<CR>",
+	{ remap = true, silent = false, desc = '"fi" = "fold indent"' }
+)
+vim.keymap.set(
+	"n",
+	"<leader>fm",
+	":setlocal foldmethod=marker<CR>",
+	{ remap = true, silent = false, desc = '"fm" = "fold marker"' }
+)
+vim.keymap.set(
+	"n",
+	"<leader>r",
+	":20winc ><CR>",
+	{ remap = true, silent = false, desc = '"r" = "right" (i.e. "window increase to the right")' }
+)
+vim.keymap.set(
+	"n",
+	"<leader>l",
+	":20winc <<CR>",
+	{ remap = true, silent = false, desc = '"l" = "left" (i.e. "window increase to the left")' }
+)
+vim.keymap.set(
+	"n",
+	"<leader>u",
+	":res +5<<CR>",
+	{ remap = true, silent = false, desc = '"u" = "up" (i.e. "resize window up")' }
+)
+vim.keymap.set(
+	"n",
+	"<leader>d",
+	":res -5<<CR>",
+	{ remap = true, silent = false, desc = '"d" = "down" (i.e. "resize window down")' }
+)
+vim.keymap.set("n", "<leader>wq", ":wqall<CR>", { remap = true, silent = false })
+vim.keymap.set("n", "<leader>wa", ":wall<CR>", { remap = true, silent = false })
+vim.keymap.set("n", "<leader>qa", ":qall<CR>", { remap = true, silent = false })
+vim.keymap.set("n", "<leader>sa", "<esc>ggVG", { remap = true, silent = false, desc = '"sa" = "select all"' })
+vim.keymap.set("n", "<leader>n", ":nohlsearch<CR>", { remap = true, silent = false })
+vim.keymap.set("n", "<leader>sp", ":set paste<CR>", { remap = true, silent = false, desc = '"sp" = "set paste"' })
+vim.keymap.set(
+	"n",
+	"<leader>snp",
+	":set nopaste<CR>",
+	{ remap = true, silent = false, desc = '"snp" = "set no paste"' }
+)
+vim.keymap.set("n", "<leader>=", "<C-w>=", { remap = true, silent = false, desc = "Equalize size of all windows." })
+vim.keymap.set(
+	"n",
+	"<leader>m",
+	vim.cmd.Ex,
+	{ remap = true, silent = false, desc = '"m" = "menu" (i.e. "the Vim file menu")' }
+)
 -- -- (END)   Leader shortcuts
 
 -- -- (START) Custom functions
