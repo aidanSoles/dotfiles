@@ -124,6 +124,45 @@ require("lazy").setup({
 				})
 			end,
 		},
+		{ -- mason-lspconfig.nvim
+			"williamboman/mason-lspconfig.nvim",
+			lazy = false,
+			-- Ordered according to the setup directions here: https://github.com/williamboman/mason-lspconfig.nvim/tree/482350b050bd413931c2cdd4857443c3da7d57cb?tab=readme-ov-file#setup
+			dependencies = {
+				"williamboman/mason.nvim",
+				"neovim/nvim-lspconfig",
+			},
+			config = function()
+				require("mason").setup()
+				require("mason-lspconfig").setup({
+					ensure_installed = { "lua_ls", "pylsp" },
+				})
+				require("lspconfig").lua_ls.setup({})
+				require("lspconfig").pylsp.setup({})
+			end,
+		},
+		{ -- coq.nvim
+			-- Installed according to: https://github.com/ms-jpq/coq_nvim/tree/0b4015f9c18fb17e58891e645a652040e6f3e98d?tab=readme-ov-file#install
+			"neovim/nvim-lspconfig",
+			lazy = false,
+			dependencies = {
+				{ "ms-jpq/coq_nvim", branch = "coq" },
+				{ "ms-jpq/coq.artifacts", branch = "artifacts" },
+				{ "ms-jpq/coq.thirdparty", branch = "3p" },
+			},
+			init = function()
+				vim.g.coq_settings = {
+					auto_start = "shut-up",
+				}
+			end,
+			config = function()
+				-- TODO: Override <C-h> to get window jump behavior back.
+				local lsp = require("lspconfig")
+				local coq = require("coq")
+				lsp.pylsp.setup(coq.lsp_ensure_capabilities({}))
+				vim.cmd([[COQnow --shut-up]])
+			end,
+		},
 		-- { -- Load all plugins from the plugin directory.
 		-- 	import = "plugins",
 		-- },
