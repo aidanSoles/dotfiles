@@ -1,16 +1,14 @@
-# below are the contents of https://github.com/ohmyzsh/ohmyzsh/blob/8168ec0174e7e3212be20ecc74810155772abff1/templates/zshrc.zsh-template:
-
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=/home/aidan/.nix-profile/share/oh-my-zsh
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="fishy"
+ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,15 +70,9 @@ ZSH_THEME="fishy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(direnv git z vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-
-source /home/aidan/.nix-profile/share/zsh-z/zsh-z.plugin.zsh
-source /home/aidan/.nix-profile/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source /home/aidan/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source /home/aidan/.bash_aliases
 
 # User configuration
 
@@ -97,16 +89,47 @@ source /home/aidan/.bash_aliases
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=/home/aidan/bin:$PATH
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+# Aidan's stuff (START)
+source ~/.bash_aliases
+
+## NVM stuff (START)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+## NVM stuff (END)
+
+## Postgres stuff (START)
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+## Postgres stuff (END)
+
+## Global Python stuff (START)
+export PATH="${PATH}:/Users/aidansoles/Library/Python/3.9/bin"
+export PATH="${PATH}:/Users/aidansoles/.local/bin"
+## Global Python stuff (END)
+
+## Global Golang stuff (START)
+export PATH="/opt/homebrew/opt/go@1.21/bin:$PATH"
+## Global Golang stuff (END)
+
+## Apple-specific config (START)
+source ~/.zshrc-apple
+## Apple-specific config (END)
+
+## VL-specific config (START)
+source ~/.zshrc-vl
+## VL-specific config (END)
+# Aidan's stuff (END)
