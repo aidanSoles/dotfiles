@@ -116,6 +116,10 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 ## Postgres stuff (END)
 
+## Rancher Desktop config (START)
+export PATH="/Users/aidansoles/.rd/bin:${PATH}" # Sadly, have to put at the beginning so it comes before `~/.local/bin`.
+## Rancher Desktop config (START)
+
 ## Global Python stuff (START)
 export PATH="${PATH}:/Users/aidansoles/Library/Python/3.9/bin"
 export PATH="${PATH}:/Users/aidansoles/.local/bin"
@@ -123,6 +127,7 @@ export PATH="${PATH}:/Users/aidansoles/.local/bin"
 
 ## Global Golang stuff (START)
 export PATH="/opt/homebrew/opt/go@1.21/bin:$PATH"
+export PATH="${PATH}:/Users/aidansoles/go/bin"
 ## Global Golang stuff (END)
 
 ## Apple-specific config (START)
@@ -133,3 +138,17 @@ source ~/.zshrc-apple
 source ~/.zshrc-vl
 ## VL-specific config (END)
 # Aidan's stuff (END)
+
+# pnpm
+export PNPM_HOME="/Users/aidansoles/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# pyenv start
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+# pyenv end
