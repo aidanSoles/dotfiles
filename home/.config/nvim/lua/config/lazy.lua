@@ -34,40 +34,48 @@ require("lazy").setup({
 
 				configs.setup({
 					ensure_installed = {
-						"awk",
-						"bash",
-						"c",
-						"clojure",
-						"cmake",
-						"cpp",
-						"css",
-						"csv",
+						-- "awk",
+						-- "bash",
+						-- "c",
+						-- "clojure",
+						-- "cmake",
+						-- "cpp",
+						-- "css",
+						-- "csv",
 						"dockerfile",
 						"git_config",
 						"git_rebase",
 						"gitattributes",
 						"gitcommit",
 						"gitignore",
-						"go",
-						"gomod",
-						"gosum",
-						"gotmpl",
-						"gowork",
-						"hcl",
-						"helm",
-						"html",
-						"javascript",
-						"json",
+						-- "go",
+						-- "gomod",
+						-- "gosum",
+						-- "gotmpl",
+						-- "gowork",
+						-- "hcl",
+						-- "helm",
+						-- "html",
+						-- "javascript",
+						-- "json",
 						"lua",
 						"make",
 						"markdown",
 						"markdown_inline",
 						"proto",
+						"python",
 						"ruby",
 						"rust",
+						-- "make",
+						-- "markdown",
+						-- "markdown_inline",
+						-- "proto",
+						"python",
+						-- "ruby",
+						-- "rust",
 						"sql",
 						"ssh_config",
-						"typescript",
+						-- "typescript",
 						"vim",
 						"yaml",
 					},
@@ -138,7 +146,13 @@ require("lazy").setup({
 					ensure_installed = { "lua_ls", "pylsp" },
 				})
 				require("lspconfig").lua_ls.setup({})
-				require("lspconfig").pylsp.setup({})
+				require("lspconfig").pylsp.setup({
+					settings = {
+						plugins = {
+							pycodestyle = { ignore = "E501" } -- TODO: Figure out how to do this (helpful links are here: https://github.com/python-lsp/python-lsp-server, and here: https://stackoverflow.com/questions/71581022/how-to-disable-linter-in-pylsp).
+						}
+					}
+				})
 			end,
 		},
 		{ -- coq.nvim
